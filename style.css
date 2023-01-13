@@ -1,0 +1,138 @@
+main {
+    
+    background-color: rgb(0, 183, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    word-break: break-all;
+    padding: 40px 90px 40px 90px;
+}
+
+body {background-color: white;
+      margin: 0;    
+      font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+}
+
+#bold {
+    font-weight:bold;
+}
+
+/* bars */
+#one {
+    background-color: blue;
+    
+}
+
+#two {
+    background-color: orange;
+
+
+}
+
+#three {
+    background-color: aqua;
+
+
+}
+
+#one, #two, #three {
+    width: 300px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+/* end bars */
+
+/* sections */
+
+section {background-color: white;
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         padding-top: 50px;
+         /* justify-content: center; */
+}
+       
+
+h2, p {
+    text-align: center;
+    color: black;
+    width: 300px;
+}
+
+
+/* DEFINE FOR MIN WIDTH STARTING POINT */
+.container {    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr); 
+    grid-template-areas: 
+    "main"
+    "g-one"
+    "g-two"
+    "g-three";
+    height: 100vh;
+}
+
+/* ASSIGN - ONLY NEED TO DO ONCE*/
+
+main {grid-area: main;}
+.g-one {grid-area: g-one;}
+.g-two {grid-area: g-two;}
+.g-three {grid-area: g-three;}
+
+/* Media queries */
+
+@media (min-width: 576px){
+    .container {  
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr); 
+        grid-template-areas: 
+        "main main"
+        "g-one g-two"
+        "g-three .";
+    } 
+    #one, #two, #three {
+        width: 200px;
+        height: 30px;
+        margin: 10 auto;
+    }
+    
+    
+
+}
+
+@media (min-width: 992px){
+    .container {  
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(2, 1fr); 
+        grid-template-areas: 
+        "main main main"
+        "g-one g-two g-three";
+    } 
+main {
+    background-color: aqua;
+
+}
+body {
+    background-color: black;
+}
+section {
+    background-color: black;
+}
+h2, p {
+    color: white;
+    
+}
+
+}
